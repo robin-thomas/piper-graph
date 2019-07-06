@@ -51,33 +51,6 @@ export class Extension extends Entity {
     this.set("owner", Value.fromBytes(value));
   }
 
-  get rating(): i32 {
-    let value = this.get("rating");
-    return value.toI32();
-  }
-
-  set rating(value: i32) {
-    this.set("rating", Value.fromI32(value));
-  }
-
-  get reviews(): BigInt {
-    let value = this.get("reviews");
-    return value.toBigInt();
-  }
-
-  set reviews(value: BigInt) {
-    this.set("reviews", Value.fromBigInt(value));
-  }
-
-  get downloads(): BigInt {
-    let value = this.get("downloads");
-    return value.toBigInt();
-  }
-
-  set downloads(value: BigInt) {
-    this.set("downloads", Value.fromBigInt(value));
-  }
-
   get updated(): BigInt {
     let value = this.get("updated");
     return value.toBigInt();
@@ -96,49 +69,13 @@ export class Extension extends Entity {
     this.set("size", Value.fromBigInt(value));
   }
 
-  get hash(): string {
-    let value = this.get("hash");
+  get version(): string {
+    let value = this.get("version");
     return value.toString();
   }
 
-  set hash(value: string) {
-    this.set("hash", Value.fromString(value));
-  }
-
-  get developer(): string {
-    let value = this.get("developer");
-    return value.toString();
-  }
-
-  set developer(value: string) {
-    this.set("developer", Value.fromString(value));
-  }
-
-  get developerETH(): string {
-    let value = this.get("developerETH");
-    return value.toString();
-  }
-
-  set developerETH(value: string) {
-    this.set("developerETH", Value.fromString(value));
-  }
-
-  get name(): string {
-    let value = this.get("name");
-    return value.toString();
-  }
-
-  set name(value: string) {
-    this.set("name", Value.fromString(value));
-  }
-
-  get overview(): string {
-    let value = this.get("overview");
-    return value.toString();
-  }
-
-  set overview(value: string) {
-    this.set("overview", Value.fromString(value));
+  set version(value: string) {
+    this.set("version", Value.fromString(value));
   }
 
   get category(): string {
@@ -150,13 +87,31 @@ export class Extension extends Entity {
     this.set("category", Value.fromString(value));
   }
 
-  get version(): string {
-    let value = this.get("version");
+  get name(): string {
+    let value = this.get("name");
     return value.toString();
   }
 
-  set version(value: string) {
-    this.set("version", Value.fromString(value));
+  set name(value: string) {
+    this.set("name", Value.fromString(value));
+  }
+
+  get hash(): string {
+    let value = this.get("hash");
+    return value.toString();
+  }
+
+  set hash(value: string) {
+    this.set("hash", Value.fromString(value));
+  }
+
+  get crx(): string {
+    let value = this.get("crx");
+    return value.toString();
+  }
+
+  set crx(value: string) {
+    this.set("crx", Value.fromString(value));
   }
 
   get iconURL(): string {
@@ -168,13 +123,22 @@ export class Extension extends Entity {
     this.set("iconURL", Value.fromString(value));
   }
 
-  get crx(): string {
-    let value = this.get("crx");
+  get developer(): string {
+    let value = this.get("developer");
     return value.toString();
   }
 
-  set crx(value: string) {
-    this.set("crx", Value.fromString(value));
+  set developer(value: string) {
+    this.set("developer", Value.fromString(value));
+  }
+
+  get overview(): string {
+    let value = this.get("overview");
+    return value.toString();
+  }
+
+  set overview(value: string) {
+    this.set("overview", Value.fromString(value));
   }
 }
 
@@ -275,15 +239,6 @@ export class ExtensionReview extends Entity {
     this.set("rating", Value.fromBigInt(value));
   }
 
-  get hash(): string {
-    let value = this.get("hash");
-    return value.toString();
-  }
-
-  set hash(value: string) {
-    this.set("hash", Value.fromString(value));
-  }
-
   get review(): string {
     let value = this.get("review");
     return value.toString();
@@ -291,5 +246,14 @@ export class ExtensionReview extends Entity {
 
   set review(value: string) {
     this.set("review", Value.fromString(value));
+  }
+
+  get hash(): string {
+    let value = this.get("hash");
+    return value.toString();
+  }
+
+  set hash(value: string) {
+    this.set("hash", Value.fromString(value));
   }
 }

@@ -16,20 +16,16 @@ export function handleExtension(event: ExtensionEvent): void {
   }
 
   entity.owner = event.params.param0
-  entity.rating = event.params.param1.rating
-  entity.reviews = event.params.param1.reviews
-  entity.downloads = event.params.param1.downloads
   entity.updated = event.params.param1.updated
   entity.size = event.params.param1.size
-  entity.hash = event.params.param1.hash
-  entity.developer = event.params.param1.developer
-  entity.developerETH = event.params.param1.developerETH
-  entity.name = event.params.param1.name
-  entity.overview = event.params.param1.overview
-  entity.category = event.params.param1.category
   entity.version = event.params.param1.version
-  entity.iconURL = event.params.param1.iconURL
+  entity.category = event.params.param1.category
+  entity.name = event.params.param1.name
+  entity.hash = event.params.param1.hash
   entity.crx = event.params.param1.crx
+  entity.iconURL = event.params.param1.iconURL
+  entity.developer = event.params.param1.developer
+  entity.overview = event.params.param1.overview
   entity.save()
 }
 
@@ -48,7 +44,7 @@ export function handleExtensionReview(event: ExtensionReviewEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.rating = event.params.rating
-  entity.hash = event.params.hash
   entity.review = event.params.review
+  entity.hash = event.params.hash
   entity.save()
 }
