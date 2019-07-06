@@ -27,76 +27,70 @@ export class Extension__Params {
     this._event = event;
   }
 
-  get param0(): ExtensionParam0Struct {
-    return this._event.parameters[0].value.toTuple() as ExtensionParam0Struct;
+  get param0(): Address {
+    return this._event.parameters[0].value.toAddress();
+  }
+
+  get param1(): ExtensionParam1Struct {
+    return this._event.parameters[1].value.toTuple() as ExtensionParam1Struct;
   }
 }
 
-export class ExtensionParam0Struct extends EthereumTuple {
-  get extension(): ExtensionParam0ExtensionStruct {
-    return this[0].toTuple() as ExtensionParam0ExtensionStruct;
-  }
-
-  get owner(): Address {
-    return this[1].toAddress();
-  }
-}
-
-export class ExtensionParam0ExtensionStruct extends EthereumTuple {
-  get hash(): string {
-    return this[0].toString();
-  }
-
-  get developer(): string {
-    return this[1].toString();
-  }
-
-  get developerETH(): string {
-    return this[2].toString();
-  }
-
-  get name(): string {
-    return this[3].toString();
-  }
-
-  get overview(): string {
-    return this[4].toString();
-  }
-
-  get category(): string {
-    return this[5].toString();
-  }
-
-  get version(): string {
-    return this[6].toString();
-  }
-
-  get size(): BigInt {
-    return this[7].toBigInt();
-  }
-
-  get iconURL(): string {
-    return this[8].toString();
-  }
-
-  get crx(): string {
-    return this[9].toString();
-  }
-
+export class ExtensionParam1Struct extends EthereumTuple {
   get rating(): i32 {
-    return this[10].toI32();
+    return this[0].toI32();
   }
 
   get reviews(): BigInt {
-    return this[11].toBigInt();
+    return this[1].toBigInt();
   }
 
   get downloads(): BigInt {
-    return this[12].toBigInt();
+    return this[2].toBigInt();
   }
 
   get updated(): BigInt {
-    return this[13].toBigInt();
+    return this[3].toBigInt();
+  }
+
+  get size(): BigInt {
+    return this[4].toBigInt();
+  }
+
+  get hash(): string {
+    return this[5].toString();
+  }
+
+  get developer(): string {
+    return this[6].toString();
+  }
+
+  get developerETH(): string {
+    return this[7].toString();
+  }
+
+  get name(): string {
+    return this[8].toString();
+  }
+
+  get overview(): string {
+    return this[9].toString();
+  }
+
+  get category(): string {
+    return this[10].toString();
+  }
+
+  get version(): string {
+    return this[11].toString();
+  }
+
+  get iconURL(): string {
+    return this[12].toString();
+  }
+
+  get crx(): string {
+    return this[13].toString();
   }
 }
 
@@ -139,74 +133,74 @@ export class ExtensionReview__Params {
     this._event = event;
   }
 
-  get hash(): string {
-    return this._event.parameters[0].value.toString();
+  get rating(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
   }
 
-  get review(): string {
+  get hash(): string {
     return this._event.parameters[1].value.toString();
   }
 
-  get rating(): BigInt {
-    return this._event.parameters[2].value.toBigInt();
+  get review(): string {
+    return this._event.parameters[2].value.toString();
   }
 }
 
 export class Contract__createNewExtensionInput_extensionStruct extends EthereumTuple {
-  get hash(): string {
-    return this[0].toString();
-  }
-
-  get developer(): string {
-    return this[1].toString();
-  }
-
-  get developerETH(): string {
-    return this[2].toString();
-  }
-
-  get name(): string {
-    return this[3].toString();
-  }
-
-  get overview(): string {
-    return this[4].toString();
-  }
-
-  get category(): string {
-    return this[5].toString();
-  }
-
-  get version(): string {
-    return this[6].toString();
-  }
-
-  get size(): BigInt {
-    return this[7].toBigInt();
-  }
-
-  get iconURL(): string {
-    return this[8].toString();
-  }
-
-  get crx(): string {
-    return this[9].toString();
-  }
-
   get rating(): i32 {
-    return this[10].toI32();
+    return this[0].toI32();
   }
 
   get reviews(): BigInt {
-    return this[11].toBigInt();
+    return this[1].toBigInt();
   }
 
   get downloads(): BigInt {
-    return this[12].toBigInt();
+    return this[2].toBigInt();
   }
 
   get updated(): BigInt {
-    return this[13].toBigInt();
+    return this[3].toBigInt();
+  }
+
+  get size(): BigInt {
+    return this[4].toBigInt();
+  }
+
+  get hash(): string {
+    return this[5].toString();
+  }
+
+  get developer(): string {
+    return this[6].toString();
+  }
+
+  get developerETH(): string {
+    return this[7].toString();
+  }
+
+  get name(): string {
+    return this[8].toString();
+  }
+
+  get overview(): string {
+    return this[9].toString();
+  }
+
+  get category(): string {
+    return this[10].toString();
+  }
+
+  get version(): string {
+    return this[11].toString();
+  }
+
+  get iconURL(): string {
+    return this[12].toString();
+  }
+
+  get crx(): string {
+    return this[13].toString();
   }
 }
 
@@ -231,11 +225,11 @@ export class Contract extends SmartContract {
     return result[0].toBoolean();
   }
 
-  addReview(_hash: string, _review: string, _rating: BigInt): boolean {
+  addReview(_rating: BigInt, _hash: string, _review: string): boolean {
     let result = super.call("addReview", [
+      EthereumValue.fromUnsignedBigInt(_rating),
       EthereumValue.fromString(_hash),
-      EthereumValue.fromString(_review),
-      EthereumValue.fromUnsignedBigInt(_rating)
+      EthereumValue.fromString(_review)
     ]);
     return result[0].toBoolean();
   }
@@ -306,60 +300,60 @@ export class CreateNewExtensionCall__Outputs {
 }
 
 export class CreateNewExtensionCall_extensionStruct extends EthereumTuple {
-  get hash(): string {
-    return this[0].toString();
-  }
-
-  get developer(): string {
-    return this[1].toString();
-  }
-
-  get developerETH(): string {
-    return this[2].toString();
-  }
-
-  get name(): string {
-    return this[3].toString();
-  }
-
-  get overview(): string {
-    return this[4].toString();
-  }
-
-  get category(): string {
-    return this[5].toString();
-  }
-
-  get version(): string {
-    return this[6].toString();
-  }
-
-  get size(): BigInt {
-    return this[7].toBigInt();
-  }
-
-  get iconURL(): string {
-    return this[8].toString();
-  }
-
-  get crx(): string {
-    return this[9].toString();
-  }
-
   get rating(): i32 {
-    return this[10].toI32();
+    return this[0].toI32();
   }
 
   get reviews(): BigInt {
-    return this[11].toBigInt();
+    return this[1].toBigInt();
   }
 
   get downloads(): BigInt {
-    return this[12].toBigInt();
+    return this[2].toBigInt();
   }
 
   get updated(): BigInt {
-    return this[13].toBigInt();
+    return this[3].toBigInt();
+  }
+
+  get size(): BigInt {
+    return this[4].toBigInt();
+  }
+
+  get hash(): string {
+    return this[5].toString();
+  }
+
+  get developer(): string {
+    return this[6].toString();
+  }
+
+  get developerETH(): string {
+    return this[7].toString();
+  }
+
+  get name(): string {
+    return this[8].toString();
+  }
+
+  get overview(): string {
+    return this[9].toString();
+  }
+
+  get category(): string {
+    return this[10].toString();
+  }
+
+  get version(): string {
+    return this[11].toString();
+  }
+
+  get iconURL(): string {
+    return this[12].toString();
+  }
+
+  get crx(): string {
+    return this[13].toString();
   }
 }
 
@@ -380,16 +374,16 @@ export class AddReviewCall__Inputs {
     this._call = call;
   }
 
-  get _hash(): string {
-    return this._call.inputValues[0].value.toString();
+  get _rating(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
   }
 
-  get _review(): string {
+  get _hash(): string {
     return this._call.inputValues[1].value.toString();
   }
 
-  get _rating(): BigInt {
-    return this._call.inputValues[2].value.toBigInt();
+  get _review(): string {
+    return this._call.inputValues[2].value.toString();
   }
 }
 

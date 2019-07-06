@@ -9,72 +9,67 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "name": "",
+        "type": "address"
+      },
+      {
         "components": [
           {
-            "components": [
-              {
-                "name": "hash",
-                "type": "string"
-              },
-              {
-                "name": "developer",
-                "type": "string"
-              },
-              {
-                "name": "developerETH",
-                "type": "string"
-              },
-              {
-                "name": "name",
-                "type": "string"
-              },
-              {
-                "name": "overview",
-                "type": "string"
-              },
-              {
-                "name": "category",
-                "type": "string"
-              },
-              {
-                "name": "version",
-                "type": "string"
-              },
-              {
-                "name": "size",
-                "type": "uint256"
-              },
-              {
-                "name": "iconURL",
-                "type": "string"
-              },
-              {
-                "name": "crx",
-                "type": "string"
-              },
-              {
-                "name": "rating",
-                "type": "uint8"
-              },
-              {
-                "name": "reviews",
-                "type": "uint256"
-              },
-              {
-                "name": "downloads",
-                "type": "uint256"
-              },
-              {
-                "name": "updated",
-                "type": "uint256"
-              }
-            ],
-            "name": "extension",
-            "type": "tuple"
+            "name": "rating",
+            "type": "uint8"
           },
           {
-            "name": "owner",
-            "type": "address"
+            "name": "reviews",
+            "type": "uint256"
+          },
+          {
+            "name": "downloads",
+            "type": "uint256"
+          },
+          {
+            "name": "updated",
+            "type": "uint256"
+          },
+          {
+            "name": "size",
+            "type": "uint256"
+          },
+          {
+            "name": "hash",
+            "type": "string"
+          },
+          {
+            "name": "developer",
+            "type": "string"
+          },
+          {
+            "name": "developerETH",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "overview",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "iconURL",
+            "type": "string"
+          },
+          {
+            "name": "crx",
+            "type": "string"
           }
         ],
         "indexed": false,
@@ -114,6 +109,11 @@
     "inputs": [
       {
         "indexed": false,
+        "name": "rating",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
         "name": "hash",
         "type": "string"
       },
@@ -121,11 +121,6 @@
         "indexed": false,
         "name": "review",
         "type": "string"
-      },
-      {
-        "indexed": false,
-        "name": "rating",
-        "type": "uint256"
       }
     ],
     "name": "ExtensionReview",
@@ -161,6 +156,26 @@
       {
         "components": [
           {
+            "name": "rating",
+            "type": "uint8"
+          },
+          {
+            "name": "reviews",
+            "type": "uint256"
+          },
+          {
+            "name": "downloads",
+            "type": "uint256"
+          },
+          {
+            "name": "updated",
+            "type": "uint256"
+          },
+          {
+            "name": "size",
+            "type": "uint256"
+          },
+          {
             "name": "hash",
             "type": "string"
           },
@@ -189,32 +204,12 @@
             "type": "string"
           },
           {
-            "name": "size",
-            "type": "uint256"
-          },
-          {
             "name": "iconURL",
             "type": "string"
           },
           {
             "name": "crx",
             "type": "string"
-          },
-          {
-            "name": "rating",
-            "type": "uint8"
-          },
-          {
-            "name": "reviews",
-            "type": "uint256"
-          },
-          {
-            "name": "downloads",
-            "type": "uint256"
-          },
-          {
-            "name": "updated",
-            "type": "uint256"
           }
         ],
         "name": "_extension",
@@ -236,16 +231,16 @@
     "constant": false,
     "inputs": [
       {
+        "name": "_rating",
+        "type": "uint256"
+      },
+      {
         "name": "_hash",
         "type": "string"
       },
       {
         "name": "_review",
         "type": "string"
-      },
-      {
-        "name": "_rating",
-        "type": "uint256"
       }
     ],
     "name": "addReview",

@@ -1,5 +1,11 @@
 type Extension @entity {
   id: ID!
+  owner: Bytes! # address
+  rating: Int! # uint8
+  reviews: BigInt! # uint256
+  downloads: BigInt! # uint256
+  updated: BigInt! # uint256
+  size: BigInt! # uint256
   hash: String! # string
   developer: String! # string
   developerETH: String! # string
@@ -7,14 +13,8 @@ type Extension @entity {
   overview: String! # string
   category: String! # string
   version: String! # string
-  size: BigInt! # uint256
   iconURL: String! # string
   crx: String! # string
-  rating: Int! # uint8
-  reviews: BigInt! # uint256
-  downloads: BigInt! # uint256
-  updated: BigInt! # uint256
-  owner: Bytes! # address
 }
 
 type ExtensionVersion @entity {
@@ -26,7 +26,7 @@ type ExtensionVersion @entity {
 
 type ExtensionReview @entity {
   id: ID!
+  rating: BigInt! # uint256
   hash: String! # string
   review: String! # string
-  rating: BigInt! # uint256
 }

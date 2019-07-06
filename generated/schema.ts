@@ -42,6 +42,60 @@ export class Extension extends Entity {
     this.set("id", Value.fromString(value));
   }
 
+  get owner(): Bytes {
+    let value = this.get("owner");
+    return value.toBytes();
+  }
+
+  set owner(value: Bytes) {
+    this.set("owner", Value.fromBytes(value));
+  }
+
+  get rating(): i32 {
+    let value = this.get("rating");
+    return value.toI32();
+  }
+
+  set rating(value: i32) {
+    this.set("rating", Value.fromI32(value));
+  }
+
+  get reviews(): BigInt {
+    let value = this.get("reviews");
+    return value.toBigInt();
+  }
+
+  set reviews(value: BigInt) {
+    this.set("reviews", Value.fromBigInt(value));
+  }
+
+  get downloads(): BigInt {
+    let value = this.get("downloads");
+    return value.toBigInt();
+  }
+
+  set downloads(value: BigInt) {
+    this.set("downloads", Value.fromBigInt(value));
+  }
+
+  get updated(): BigInt {
+    let value = this.get("updated");
+    return value.toBigInt();
+  }
+
+  set updated(value: BigInt) {
+    this.set("updated", Value.fromBigInt(value));
+  }
+
+  get size(): BigInt {
+    let value = this.get("size");
+    return value.toBigInt();
+  }
+
+  set size(value: BigInt) {
+    this.set("size", Value.fromBigInt(value));
+  }
+
   get hash(): string {
     let value = this.get("hash");
     return value.toString();
@@ -105,15 +159,6 @@ export class Extension extends Entity {
     this.set("version", Value.fromString(value));
   }
 
-  get size(): BigInt {
-    let value = this.get("size");
-    return value.toBigInt();
-  }
-
-  set size(value: BigInt) {
-    this.set("size", Value.fromBigInt(value));
-  }
-
   get iconURL(): string {
     let value = this.get("iconURL");
     return value.toString();
@@ -130,51 +175,6 @@ export class Extension extends Entity {
 
   set crx(value: string) {
     this.set("crx", Value.fromString(value));
-  }
-
-  get rating(): i32 {
-    let value = this.get("rating");
-    return value.toI32();
-  }
-
-  set rating(value: i32) {
-    this.set("rating", Value.fromI32(value));
-  }
-
-  get reviews(): BigInt {
-    let value = this.get("reviews");
-    return value.toBigInt();
-  }
-
-  set reviews(value: BigInt) {
-    this.set("reviews", Value.fromBigInt(value));
-  }
-
-  get downloads(): BigInt {
-    let value = this.get("downloads");
-    return value.toBigInt();
-  }
-
-  set downloads(value: BigInt) {
-    this.set("downloads", Value.fromBigInt(value));
-  }
-
-  get updated(): BigInt {
-    let value = this.get("updated");
-    return value.toBigInt();
-  }
-
-  set updated(value: BigInt) {
-    this.set("updated", Value.fromBigInt(value));
-  }
-
-  get owner(): Bytes {
-    let value = this.get("owner");
-    return value.toBytes();
-  }
-
-  set owner(value: Bytes) {
-    this.set("owner", Value.fromBytes(value));
   }
 }
 
@@ -266,6 +266,15 @@ export class ExtensionReview extends Entity {
     this.set("id", Value.fromString(value));
   }
 
+  get rating(): BigInt {
+    let value = this.get("rating");
+    return value.toBigInt();
+  }
+
+  set rating(value: BigInt) {
+    this.set("rating", Value.fromBigInt(value));
+  }
+
   get hash(): string {
     let value = this.get("hash");
     return value.toString();
@@ -282,14 +291,5 @@ export class ExtensionReview extends Entity {
 
   set review(value: string) {
     this.set("review", Value.fromString(value));
-  }
-
-  get rating(): BigInt {
-    let value = this.get("rating");
-    return value.toBigInt();
-  }
-
-  set rating(value: BigInt) {
-    this.set("rating", Value.fromBigInt(value));
   }
 }
