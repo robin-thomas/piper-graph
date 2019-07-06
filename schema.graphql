@@ -1,0 +1,25 @@
+type Extension @entity {
+  id: ID!
+  hash: String! # string
+  developer: String! # string
+  developerETH: String! # string
+  name: String! # string
+  overview: String! # string
+  category: String! # string
+  version: String! # string
+  size: BigInt! # uint256
+  iconURL: String! # string
+  crx: String! # string
+  rating: Int! # uint8
+  reviews: BigInt! # uint256
+  downloads: BigInt! # uint256
+  updated: BigInt! # uint256
+  owner: Bytes! # address
+}
+
+type ExtensionVersion @entity {
+  id: ID!
+  hash: String! # string
+  version: String! # string
+  crx: String! # string
+}
