@@ -1,6 +1,6 @@
 specVersion: 0.0.1
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Contract
@@ -18,7 +18,7 @@ dataSources:
         - ExtensionReview
       abis:
         - name: Contract
-          file: ./abis/Contract.json
+          file: Contract/abis/Contract.json
       eventHandlers:
         - event: Extension(((string,string,string,string,string,string,string,uint256,string,string,uint8,uint256,uint256,uint256),address))
           handler: handleExtension
@@ -26,4 +26,4 @@ dataSources:
           handler: handleExtensionVersion
         - event: ExtensionReview(string,string,uint256)
           handler: handleExtensionReview
-      file: ./src/mapping.ts
+      file: Contract/Contract.wasm

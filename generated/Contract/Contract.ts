@@ -126,6 +126,32 @@ export class ExtensionVersion__Params {
   }
 }
 
+export class ExtensionReview extends EthereumEvent {
+  get params(): ExtensionReview__Params {
+    return new ExtensionReview__Params(this);
+  }
+}
+
+export class ExtensionReview__Params {
+  _event: ExtensionReview;
+
+  constructor(event: ExtensionReview) {
+    this._event = event;
+  }
+
+  get hash(): string {
+    return this._event.parameters[0].value.toString();
+  }
+
+  get review(): string {
+    return this._event.parameters[1].value.toString();
+  }
+
+  get rating(): BigInt {
+    return this._event.parameters[2].value.toBigInt();
+  }
+}
+
 export class Contract__createNewExtensionInput_extensionStruct extends EthereumTuple {
   get hash(): string {
     return this[0].toString();
@@ -201,6 +227,15 @@ export class Contract extends SmartContract {
     let result = super.call("createNewExtension", [
       EthereumValue.fromString(_hash),
       EthereumValue.fromTuple(_extension)
+    ]);
+    return result[0].toBoolean();
+  }
+
+  addReview(_hash: string, _review: string, _rating: BigInt): boolean {
+    let result = super.call("addReview", [
+      EthereumValue.fromString(_hash),
+      EthereumValue.fromString(_review),
+      EthereumValue.fromUnsignedBigInt(_rating)
     ]);
     return result[0].toBoolean();
   }
@@ -325,5 +360,47 @@ export class CreateNewExtensionCall_extensionStruct extends EthereumTuple {
 
   get updated(): BigInt {
     return this[13].toBigInt();
+  }
+}
+
+export class AddReviewCall extends EthereumCall {
+  get inputs(): AddReviewCall__Inputs {
+    return new AddReviewCall__Inputs(this);
+  }
+
+  get outputs(): AddReviewCall__Outputs {
+    return new AddReviewCall__Outputs(this);
+  }
+}
+
+export class AddReviewCall__Inputs {
+  _call: AddReviewCall;
+
+  constructor(call: AddReviewCall) {
+    this._call = call;
+  }
+
+  get _hash(): string {
+    return this._call.inputValues[0].value.toString();
+  }
+
+  get _review(): string {
+    return this._call.inputValues[1].value.toString();
+  }
+
+  get _rating(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+}
+
+export class AddReviewCall__Outputs {
+  _call: AddReviewCall;
+
+  constructor(call: AddReviewCall) {
+    this._call = call;
+  }
+
+  get value0(): boolean {
+    return this._call.outputValues[0].value.toBoolean();
   }
 }

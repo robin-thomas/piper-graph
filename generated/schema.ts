@@ -235,3 +235,61 @@ export class ExtensionVersion extends Entity {
     this.set("crx", Value.fromString(value));
   }
 }
+
+export class ExtensionReview extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save ExtensionReview entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save ExtensionReview entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("ExtensionReview", id.toString(), this);
+  }
+
+  static load(id: string): ExtensionReview | null {
+    return store.get("ExtensionReview", id) as ExtensionReview | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get hash(): string {
+    let value = this.get("hash");
+    return value.toString();
+  }
+
+  set hash(value: string) {
+    this.set("hash", Value.fromString(value));
+  }
+
+  get review(): string {
+    let value = this.get("review");
+    return value.toString();
+  }
+
+  set review(value: string) {
+    this.set("review", Value.fromString(value));
+  }
+
+  get rating(): BigInt {
+    let value = this.get("rating");
+    return value.toBigInt();
+  }
+
+  set rating(value: BigInt) {
+    this.set("rating", Value.fromBigInt(value));
+  }
+}

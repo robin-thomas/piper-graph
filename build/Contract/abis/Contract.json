@@ -1,0 +1,262 @@
+[
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "name": "hash",
+                "type": "string"
+              },
+              {
+                "name": "developer",
+                "type": "string"
+              },
+              {
+                "name": "developerETH",
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "overview",
+                "type": "string"
+              },
+              {
+                "name": "category",
+                "type": "string"
+              },
+              {
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "name": "size",
+                "type": "uint256"
+              },
+              {
+                "name": "iconURL",
+                "type": "string"
+              },
+              {
+                "name": "crx",
+                "type": "string"
+              },
+              {
+                "name": "rating",
+                "type": "uint8"
+              },
+              {
+                "name": "reviews",
+                "type": "uint256"
+              },
+              {
+                "name": "downloads",
+                "type": "uint256"
+              },
+              {
+                "name": "updated",
+                "type": "uint256"
+              }
+            ],
+            "name": "extension",
+            "type": "tuple"
+          },
+          {
+            "name": "owner",
+            "type": "address"
+          }
+        ],
+        "indexed": false,
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "name": "Extension",
+    "type": "event",
+    "_alias": "Extension"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "hash",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "version",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "crx",
+        "type": "string"
+      }
+    ],
+    "name": "ExtensionVersion",
+    "type": "event",
+    "_alias": "ExtensionVersion"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "hash",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "review",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "rating",
+        "type": "uint256"
+      }
+    ],
+    "name": "ExtensionReview",
+    "type": "event",
+    "_alias": "ExtensionReview"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_hash",
+        "type": "string"
+      }
+    ],
+    "name": "isExtension",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_hash",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "name": "hash",
+            "type": "string"
+          },
+          {
+            "name": "developer",
+            "type": "string"
+          },
+          {
+            "name": "developerETH",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "overview",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "type": "uint256"
+          },
+          {
+            "name": "iconURL",
+            "type": "string"
+          },
+          {
+            "name": "crx",
+            "type": "string"
+          },
+          {
+            "name": "rating",
+            "type": "uint8"
+          },
+          {
+            "name": "reviews",
+            "type": "uint256"
+          },
+          {
+            "name": "downloads",
+            "type": "uint256"
+          },
+          {
+            "name": "updated",
+            "type": "uint256"
+          }
+        ],
+        "name": "_extension",
+        "type": "tuple"
+      }
+    ],
+    "name": "createNewExtension",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_hash",
+        "type": "string"
+      },
+      {
+        "name": "_review",
+        "type": "string"
+      },
+      {
+        "name": "_rating",
+        "type": "uint256"
+      }
+    ],
+    "name": "addReview",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
