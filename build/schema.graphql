@@ -1,0 +1,28 @@
+type Extension @entity {
+  id: ID!
+  owner: Bytes! # address
+  updated: BigInt! # uint32
+  size: BigInt! # uint32
+  version: String! # string
+  category: String! # string
+  name: String! # string
+  hash: String! # string
+  crx: String! # string
+  iconURL: String! # string
+  developer: String! # string
+  overview: String! # string
+}
+
+type ExtensionVersion @entity {
+  id: ID!
+  hash: String! # string
+  version: String! # string
+  crx: String! # string
+}
+
+type ExtensionReview @entity {
+  id: ID!
+  hash: String! # string
+  rating: BigInt! # uint32
+  review: String! # string
+}

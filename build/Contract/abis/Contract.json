@@ -1,0 +1,205 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "name": "updated",
+            "type": "uint32"
+          },
+          {
+            "name": "size",
+            "type": "uint32"
+          },
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "hash",
+            "type": "string"
+          },
+          {
+            "name": "crx",
+            "type": "string"
+          },
+          {
+            "name": "iconURL",
+            "type": "string"
+          },
+          {
+            "name": "developer",
+            "type": "string"
+          },
+          {
+            "name": "overview",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "name": "extension",
+        "type": "tuple"
+      }
+    ],
+    "name": "Extension",
+    "type": "event",
+    "_alias": "Extension"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "hash",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "version",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "crx",
+        "type": "string"
+      }
+    ],
+    "name": "ExtensionVersion",
+    "type": "event",
+    "_alias": "ExtensionVersion"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "hash",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "rating",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "name": "review",
+        "type": "string"
+      }
+    ],
+    "name": "ExtensionReview",
+    "type": "event",
+    "_alias": "ExtensionReview"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_hash",
+        "type": "string"
+      }
+    ],
+    "name": "isExtension",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "name": "updated",
+            "type": "uint32"
+          },
+          {
+            "name": "size",
+            "type": "uint32"
+          },
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "hash",
+            "type": "string"
+          },
+          {
+            "name": "crx",
+            "type": "string"
+          },
+          {
+            "name": "iconURL",
+            "type": "string"
+          },
+          {
+            "name": "developer",
+            "type": "string"
+          },
+          {
+            "name": "overview",
+            "type": "string"
+          }
+        ],
+        "name": "_extension",
+        "type": "tuple"
+      }
+    ],
+    "name": "createNewExtension",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_hash",
+        "type": "string"
+      },
+      {
+        "name": "_rating",
+        "type": "uint32"
+      },
+      {
+        "name": "_review",
+        "type": "string"
+      }
+    ],
+    "name": "addReview",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

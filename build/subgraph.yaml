@@ -1,0 +1,29 @@
+specVersion: 0.0.1
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: ropsten
+    source:
+      address: "0x85f389f0Eb9723D50A60A7F653D0bB5ade243D65"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Extension
+        - ExtensionVersion
+        - ExtensionReview
+      abis:
+        - name: Contract
+          file: Contract/abis/Contract.json
+      eventHandlers:
+        - event: Extension(address,(uint32,uint32,string,string,string,string,string,string,string,string))
+          handler: handleExtension
+        - event: ExtensionVersion(string,string,string)
+          handler: handleExtensionVersion
+        - event: ExtensionReview(string,uint32,string)
+          handler: handleExtensionReview
+      file: Contract/Contract.wasm
