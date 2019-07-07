@@ -230,6 +230,15 @@ export class ExtensionReview extends Entity {
     this.set("id", Value.fromString(value));
   }
 
+  get hash(): string {
+    let value = this.get("hash");
+    return value.toString();
+  }
+
+  set hash(value: string) {
+    this.set("hash", Value.fromString(value));
+  }
+
   get rating(): BigInt {
     let value = this.get("rating");
     return value.toBigInt();
@@ -246,14 +255,5 @@ export class ExtensionReview extends Entity {
 
   set review(value: string) {
     this.set("review", Value.fromString(value));
-  }
-
-  get hash(): string {
-    let value = this.get("hash");
-    return value.toString();
-  }
-
-  set hash(value: string) {
-    this.set("hash", Value.fromString(value));
   }
 }

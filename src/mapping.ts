@@ -10,22 +10,22 @@ import {
 } from "../generated/schema"
 
 export function handleExtension(event: ExtensionEvent): void {
-  let entity = Extension.load(event.params.param1.hash)
+  let entity = Extension.load(event.params.extension.hash)
   if (entity === null) {
-    entity = new Extension(event.params.param1.hash)
+    entity = new Extension(event.params.extension.hash)
   }
 
-  entity.owner = event.params.param0
-  entity.updated = event.params.param1.updated
-  entity.size = event.params.param1.size
-  entity.version = event.params.param1.version
-  entity.category = event.params.param1.category
-  entity.name = event.params.param1.name
-  entity.hash = event.params.param1.hash
-  entity.crx = event.params.param1.crx
-  entity.iconURL = event.params.param1.iconURL
-  entity.developer = event.params.param1.developer
-  entity.overview = event.params.param1.overview
+  entity.owner = event.params.owner
+  entity.updated = event.params.extension.updated
+  entity.size = event.params.extension.size
+  entity.version = event.params.extension.version
+  entity.category = event.params.extension.category
+  entity.name = event.params.extension.name
+  entity.hash = event.params.extension.hash
+  entity.crx = event.params.extension.crx
+  entity.iconURL = event.params.extension.iconURL
+  entity.developer = event.params.extension.developer
+  entity.overview = event.params.extension.overview
   entity.save()
 }
 
@@ -43,8 +43,8 @@ export function handleExtensionReview(event: ExtensionReviewEvent): void {
   let entity = new ExtensionReview(
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
+  entity.hash = event.params.hash
   entity.rating = event.params.rating
   entity.review = event.params.review
-  entity.hash = event.params.hash
   entity.save()
 }

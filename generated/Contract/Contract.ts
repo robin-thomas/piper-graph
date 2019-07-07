@@ -27,16 +27,16 @@ export class Extension__Params {
     this._event = event;
   }
 
-  get param0(): Address {
+  get owner(): Address {
     return this._event.parameters[0].value.toAddress();
   }
 
-  get param1(): ExtensionParam1Struct {
-    return this._event.parameters[1].value.toTuple() as ExtensionParam1Struct;
+  get extension(): ExtensionExtensionStruct {
+    return this._event.parameters[1].value.toTuple() as ExtensionExtensionStruct;
   }
 }
 
-export class ExtensionParam1Struct extends EthereumTuple {
+export class ExtensionExtensionStruct extends EthereumTuple {
   get updated(): BigInt {
     return this[0].toBigInt();
   }
@@ -117,15 +117,15 @@ export class ExtensionReview__Params {
     this._event = event;
   }
 
+  get hash(): string {
+    return this._event.parameters[0].value.toString();
+  }
+
   get rating(): BigInt {
-    return this._event.parameters[0].value.toBigInt();
+    return this._event.parameters[1].value.toBigInt();
   }
 
   get review(): string {
-    return this._event.parameters[1].value.toString();
-  }
-
-  get hash(): string {
     return this._event.parameters[2].value.toString();
   }
 }
@@ -230,15 +230,15 @@ export class AddReviewCall__Inputs {
     this._call = call;
   }
 
+  get _hash(): string {
+    return this._call.inputValues[0].value.toString();
+  }
+
   get _rating(): BigInt {
-    return this._call.inputValues[0].value.toBigInt();
+    return this._call.inputValues[1].value.toBigInt();
   }
 
   get _review(): string {
-    return this._call.inputValues[1].value.toString();
-  }
-
-  get _hash(): string {
     return this._call.inputValues[2].value.toString();
   }
 }
