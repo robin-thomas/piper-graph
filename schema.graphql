@@ -18,6 +18,8 @@ type ExtensionVersion @entity {
   hash: String! # string
   version: String! # string
   crx: String! # string
+  size: BigInt! # uint32
+  updated: BigInt! # uint32
 }
 
 type ExtensionReview @entity {
@@ -25,4 +27,5 @@ type ExtensionReview @entity {
   hash: String! # string
   rating: BigInt! # uint32
   review: String! # string
+  updated: BigInt! # uint32
 }

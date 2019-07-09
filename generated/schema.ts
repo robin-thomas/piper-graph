@@ -198,6 +198,24 @@ export class ExtensionVersion extends Entity {
   set crx(value: string) {
     this.set("crx", Value.fromString(value));
   }
+
+  get size(): BigInt {
+    let value = this.get("size");
+    return value.toBigInt();
+  }
+
+  set size(value: BigInt) {
+    this.set("size", Value.fromBigInt(value));
+  }
+
+  get updated(): BigInt {
+    let value = this.get("updated");
+    return value.toBigInt();
+  }
+
+  set updated(value: BigInt) {
+    this.set("updated", Value.fromBigInt(value));
+  }
 }
 
 export class ExtensionReview extends Entity {
@@ -255,5 +273,14 @@ export class ExtensionReview extends Entity {
 
   set review(value: string) {
     this.set("review", Value.fromString(value));
+  }
+
+  get updated(): BigInt {
+    let value = this.get("updated");
+    return value.toBigInt();
+  }
+
+  set updated(value: BigInt) {
+    this.set("updated", Value.fromBigInt(value));
   }
 }

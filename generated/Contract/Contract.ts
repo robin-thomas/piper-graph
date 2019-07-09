@@ -102,6 +102,14 @@ export class ExtensionVersion__Params {
   get crx(): string {
     return this._event.parameters[2].value.toString();
   }
+
+  get size(): BigInt {
+    return this._event.parameters[3].value.toBigInt();
+  }
+
+  get updated(): BigInt {
+    return this._event.parameters[4].value.toBigInt();
+  }
 }
 
 export class ExtensionReview extends EthereumEvent {
@@ -127,6 +135,10 @@ export class ExtensionReview__Params {
 
   get review(): string {
     return this._event.parameters[2].value.toString();
+  }
+
+  get updated(): BigInt {
+    return this._event.parameters[3].value.toBigInt();
   }
 }
 
@@ -240,6 +252,10 @@ export class AddReviewCall__Inputs {
 
   get _review(): string {
     return this._call.inputValues[2].value.toString();
+  }
+
+  get _updated(): BigInt {
+    return this._call.inputValues[3].value.toBigInt();
   }
 }
 

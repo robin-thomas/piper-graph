@@ -36,6 +36,8 @@ export function handleExtensionVersion(event: ExtensionVersionEvent): void {
   entity.hash = event.params.hash
   entity.version = event.params.version
   entity.crx = event.params.crx
+  entity.size = event.params.size
+  entity.updated = event.params.updated
   entity.save()
 }
 
@@ -46,5 +48,6 @@ export function handleExtensionReview(event: ExtensionReviewEvent): void {
   entity.hash = event.params.hash
   entity.rating = event.params.rating
   entity.review = event.params.review
+  entity.updated = event.params.updated
   entity.save()
 }
