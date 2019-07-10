@@ -18,7 +18,8 @@ Querying from a smart contract is never a good idea. It takes forever, plus the 
 # Entity
 Piper Graph supports 3 entities:
 
-**Extension** - this entity is used to track of all latest updates for an extension.
+### **Extension**
+This entity is used to track of all latest updates for an extension.
 ```
 type Extension @entity {
   id: ID!
@@ -36,7 +37,8 @@ type Extension @entity {
 }
 ```
 
-**ExtensionVersion** - this entity is used to keep track of all version updates of each extension.
+### **ExtensionVersion**
+This entity is used to keep track of all version updates of each extension.
 ```
 type ExtensionVersion @entity {
   id: ID!
@@ -48,7 +50,8 @@ type ExtensionVersion @entity {
 }
 ```
 
-**ExtensionRating** - this entity is used to keep track of all ratings/reviews of an extension.
+### **ExtensionRating**
+This entity is used to keep track of all ratings/reviews of an extension.
 ```
 type ExtensionReview @entity {
   id: ID!
