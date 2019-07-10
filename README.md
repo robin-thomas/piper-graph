@@ -59,6 +59,112 @@ type ExtensionReview @entity {
 }
 ```
 
+# Queries:
+
+**IS_EXTENSION_UPDATED**
+```
+query Extension($hash: String!) {
+  extension(hash: $hash) {
+    hash
+      updated
+    }
+  }
+}
+```
+
+**GET_EXTENSION_BY_HASH**
+```
+query Extension($hash: String!) {
+  extension(hash: $hash) {
+    hash
+    developer
+    iconURL
+    category
+    version
+    crx
+    overview
+    updated
+    size
+    owner
+    name
+  }
+}
+```
+
+**GET_EXTENSIONS**
+```
+query Extensions($skip: Int!) {
+  extensions(orderBy: updated, orderDirection: desc, first: 10, skip: $skip) {
+    hash
+    developer
+    iconURL
+    category
+    version
+    crx
+    overview
+    updated
+    size
+    owner
+    name
+  }
+}
+```
+
+**GET_EXTENSION_VERSIONS**
+```
+query ExtensionVersions($hash: String!) {
+  extensionVersions(where: { hash: $hash }) {
+    hash
+    version
+    crx
+  }
+}
+```
+
+**GET_EXTENSION_REVIEWS**
+```
+query ExtensionReviews($hash: String!) {
+  extensionReviews(where: { hash: $hash }) {
+    hash
+    rating
+    reviews
+  }
+}
+```
+
+**SEARCH_EXTENSIONS**
+```
+query SearchExtensions($rating: Int!, $category: String!, $name: String!) {
+  extensions(where: { name_starts_with: $name, category: $category }) {
+    hash
+  }
+  extensionReviews(where: { rating_gte: $rating }) {
+    hash
+  }
+}
+```
+
+**GET_EXTENSIONS_BY_HASH**
+```
+query Extension($hash: [String!]!) {
+  extensions(where: { hash_in: $hash }) {
+    hash
+    developer
+    iconURL
+    category
+    version
+    crx
+    overview
+    updated
+    size
+    owner
+    name
+  }
+}
+```
+
+You can see all the queries being used here: https://github.com/robin-thomas/piper/blob/master/components/utils/graphql/Query.js
+
 # Installation:
 ```
 $ git clone https://github.com/robin-thomas/piper.git
