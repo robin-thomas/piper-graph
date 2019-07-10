@@ -7,7 +7,7 @@
 3. [Queries](#queries)
 4. [Installation](#installation)
 
-#### Introduction
+# Introduction
 > While blockchains and storage networks are critical components of the stack, data is rarely stored in a format that can be consumed directly in applications. Applications need to filter, sort, paginate, group, and join data before it can be fetched. Users don’t like looking at spinners and waiting for screens to load. If web3 is going to catch on we need to provide experiences that are as good or better than centralized alternatives.
 \- [https://medium.com/graphprotocol/introducing-the-graph-4a281b28203e](https://medium.com/graphprotocol/introducing-the-graph-4a281b28203e)
 
@@ -15,7 +15,7 @@ Querying from a smart contract is never a good idea. It takes forever, plus the 
 
 **Piper Graph** is one such graph built for my dapp: [Piper](https://github.com/robin-thomas/piper.git)
 
-#### Entity
+# Entity
 Piper Graph supports 3 entities:
 
 **Extension** - this entity is used to track of all latest updates for an extension.
@@ -59,7 +59,7 @@ type ExtensionReview @entity {
 }
 ```
 
-#### Installation:
+# Installation:
 ```
 $ git clone https://github.com/robin-thomas/piper.git
 $ git clone https://github.com/robin-thomas/piper-graph.git
