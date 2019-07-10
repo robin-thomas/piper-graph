@@ -4,10 +4,17 @@
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Entity](#entity)
-    * [Extension](#extension)
-    * [ExtensionVersion](#extensionversion)
-    * [ExtensionRating](#extensionrating)
+   * [Extension](#extension)
+   * [ExtensionVersion](#extensionversion)
+   * [ExtensionRating](#extensionrating)
 3. [Queries](#queries)
+   * [IS_EXTENSION_UPDATED](#is_extension_updated)
+   * [GET_EXTENSION_BY_HASH](#get_extension_by_hash)
+   * [GET_EXTENSIONS](#get_extensions)
+   * [GET_EXTENSION_VERSIONS](#get_extension_versions)
+   * [GET_EXTENSION_REVIEWS](#get_extension_reviews)
+   * [SEARCH_EXTENSIONS](#search_extensions)
+   * [GET_EXTENSIONS_BY_HASH](#get_extensions_by_hash)
 4. [Installation](#installation)
 
 # Introduction
