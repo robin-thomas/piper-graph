@@ -69,6 +69,7 @@ type ExtensionReview @entity {
   rating: BigInt! # uint32
   review: String! # string
   updated: BigInt! # uint32
+  reviewer: Bytes! # address
 }
 ```
 
@@ -141,6 +142,7 @@ query ExtensionReviews($hash: String!) {
     hash
     rating
     reviews
+    reviewer
   }
 }
 ```
