@@ -4,6 +4,9 @@
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Entity](#entity)
+    * [Extension](#extension)
+    * [ExtensionVersion](#extensionversion)
+    * [ExtensionRating](#extensionrating)
 3. [Queries](#queries)
 4. [Installation](#installation)
 
@@ -64,7 +67,7 @@ type ExtensionReview @entity {
 
 # Queries:
 
-**IS_EXTENSION_UPDATED**
+### **IS_EXTENSION_UPDATED**
 ```
 query Extension($hash: String!) {
   extension(hash: $hash) {
@@ -75,7 +78,7 @@ query Extension($hash: String!) {
 }
 ```
 
-**GET_EXTENSION_BY_HASH**
+### **GET_EXTENSION_BY_HASH**
 ```
 query Extension($hash: String!) {
   extension(hash: $hash) {
@@ -94,7 +97,7 @@ query Extension($hash: String!) {
 }
 ```
 
-**GET_EXTENSIONS**
+### **GET_EXTENSIONS**
 ```
 query Extensions($skip: Int!) {
   extensions(orderBy: updated, orderDirection: desc, first: 10, skip: $skip) {
@@ -113,7 +116,7 @@ query Extensions($skip: Int!) {
 }
 ```
 
-**GET_EXTENSION_VERSIONS**
+### **GET_EXTENSION_VERSIONS**
 ```
 query ExtensionVersions($hash: String!) {
   extensionVersions(where: { hash: $hash }) {
@@ -124,7 +127,7 @@ query ExtensionVersions($hash: String!) {
 }
 ```
 
-**GET_EXTENSION_REVIEWS**
+### **GET_EXTENSION_REVIEWS**
 ```
 query ExtensionReviews($hash: String!) {
   extensionReviews(where: { hash: $hash }) {
@@ -135,7 +138,7 @@ query ExtensionReviews($hash: String!) {
 }
 ```
 
-**SEARCH_EXTENSIONS**
+### **SEARCH_EXTENSIONS**
 ```
 query SearchExtensions($rating: Int!, $category: String!, $name: String!) {
   extensions(where: { name_starts_with: $name, category: $category }) {
@@ -147,7 +150,7 @@ query SearchExtensions($rating: Int!, $category: String!, $name: String!) {
 }
 ```
 
-**GET_EXTENSIONS_BY_HASH**
+### **GET_EXTENSIONS_BY_HASH**
 ```
 query Extension($hash: [String!]!) {
   extensions(where: { hash_in: $hash }) {
