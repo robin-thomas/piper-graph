@@ -18,8 +18,8 @@
 4. [Installation](#installation)
 
 # Introduction
-> While blockchains and storage networks are critical components of the stack, data is rarely stored in a format that can be consumed directly in applications. Applications need to filter, sort, paginate, group, and join data before it can be fetched. Users don’t like looking at spinners and waiting for screens to load. If web3 is going to catch on we need to provide experiences that are as good or better than centralized alternatives.
-\- [https://medium.com/graphprotocol/introducing-the-graph-4a281b28203e](https://medium.com/graphprotocol/introducing-the-graph-4a281b28203e)
+> While blockchains and storage networks are critical components of the stack, data is rarely stored in a format that can be consumed directly in applications. Applications need to filter, sort, paginate, group, and join data before it can be fetched. Users don’t like looking at spinners and waiting for screens to load. If web3 is going to catch on we need to provide experiences that are as good or better than centralized alternatives.<br/><br/>
+\- https://medium.com/graphprotocol/introducing-the-graph-4a281b28203e
 
 Querying from a smart contract is never a good idea. It takes forever, plus the kind of database querying that we are so used to, is next to impossible to replicate on smart contracts. So what to do? Enter [The Graph](https://thegraph.com/), which allows you to create a GraphQL endpoint (with minimal code) by listening to the events emitted from your smart contract. You don't even have to store much data on the blockchain! Plus they even come with their own set of GraphQL resolvers that will solve most of your query problems! Isn't that amazing? 
 
