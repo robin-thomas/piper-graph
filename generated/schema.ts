@@ -283,4 +283,13 @@ export class ExtensionReview extends Entity {
   set updated(value: BigInt) {
     this.set("updated", Value.fromBigInt(value));
   }
+
+  get reviewer(): Bytes {
+    let value = this.get("reviewer");
+    return value.toBytes();
+  }
+
+  set reviewer(value: Bytes) {
+    this.set("reviewer", Value.fromBytes(value));
+  }
 }

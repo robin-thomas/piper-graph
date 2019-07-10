@@ -114,6 +114,11 @@
         "indexed": false,
         "name": "updated",
         "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "name": "reviewer",
+        "type": "address"
       }
     ],
     "name": "ExtensionReview",

@@ -140,6 +140,10 @@ export class ExtensionReview__Params {
   get updated(): BigInt {
     return this._event.parameters[3].value.toBigInt();
   }
+
+  get reviewer(): Address {
+    return this._event.parameters[4].value.toAddress();
+  }
 }
 
 export class Contract extends SmartContract {

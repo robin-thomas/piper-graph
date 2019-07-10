@@ -49,5 +49,6 @@ export function handleExtensionReview(event: ExtensionReviewEvent): void {
   entity.rating = event.params.rating
   entity.review = event.params.review
   entity.updated = event.params.updated
+  entity.reviewer = event.params.reviewer
   entity.save()
 }

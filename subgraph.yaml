@@ -6,7 +6,7 @@ dataSources:
     name: Contract
     network: ropsten
     source:
-      address: "0x12A083ae08074658bf4fc249C32822f69Ec68bcf"
+      address: "0x89b47D8E2719b10BD0c5E960e9A8aFC3f791110F"
       abi: Contract
     mapping:
       kind: ethereum/events
@@ -24,6 +24,6 @@ dataSources:
           handler: handleExtension
         - event: ExtensionVersion(string,string,string,uint32,uint32)
           handler: handleExtensionVersion
-        - event: ExtensionReview(string,uint32,string,uint32)
+        - event: ExtensionReview(string,uint32,string,uint32,address)
           handler: handleExtensionReview
       file: ./src/mapping.ts
